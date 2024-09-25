@@ -32,6 +32,10 @@ There are multiple ways to configure the package and the language server.
     }
     ```
 
+## Installation
+
+Add `https://github.com/aireilly/LSP-harper-ls` using `Package control: Add repository` in Sublime Text, and then install `LSP-harper-ls` using Package control.
+
 [1]: https://github.com/elijah-potter/harper/tree/master/harper-ls
 [2]: https://packagecontrol.io/packages/LSP-json
 [3]: https://packagecontrol.io/packages/LSP
