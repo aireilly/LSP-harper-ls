@@ -15,8 +15,7 @@ SESSION_NAME = "harper-ls"
 # After changing this tag, go through the server settings again to see if any
 # new server settings are added or old ones removed.
 TAG = "v0.11.0"
-URL = "https://github.com/errata-ai/harper-ls/releases/download/{tag}/harper-ls-{arch}-{platform}.zip"
-
+URL = "https://github.com/elijah-potter/harper/releases/download/{tag}/harper-ls-{arch}-{platform}.zip"
 
 def arch() -> str:
     if sublime.arch() == "x64":
