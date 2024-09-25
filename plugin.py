@@ -2,9 +2,7 @@ import os
 import shutil
 import urllib.request
 import zipfile
-
 import sublime
-
 from LSP.plugin import AbstractPlugin, register_plugin, unregister_plugin
 
 SESSION_NAME = "harper-ls"
