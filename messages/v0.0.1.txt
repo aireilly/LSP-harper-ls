@@ -1,0 +1,3 @@
+# LSP-harper-ls v0.0.1
+
+* Installed harper-ls v0.11.0.

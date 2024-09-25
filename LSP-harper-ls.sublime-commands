@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "Preferences: LSP-harper-ls Settings",
+        "command": "edit_settings",
+        "args": {
+            "base_file": "${packages}/LSP-harper-ls/LSP-harper-ls.sublime-settings",
+            "default": "// Settings in here override those in \"LSP-harper-ls/LSP-harper-ls.sublime-settings\"\n{\n\t$0\n}\n"
+        }
+    }
+]

@@ -1,0 +1,57 @@
+{
+  "contributions": {
+    "settings": [
+      {
+        "file_patterns": [
+          "/LSP-harper-ls.sublime-settings"
+        ],
+        "schema": {
+          "$id": "sublime://settings/LSP-harper-ls",
+          "allOf": [
+            {
+              "$ref": "sublime://settings/LSP-plugin-base"
+            },
+            {
+              "$ref": "sublime://settings/LSP-harper-ls#/definitions/PluginConfig"
+            }
+          ],
+          "definitions": {
+            "PluginConfig": {
+              "properties": {
+                "initializationOptions": {
+                  "properties": {
+                    "installHarper": {
+                      "default": true,
+                      "description": "Install and update Harper automatically.",
+                      "type": "boolean"
+                    },
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "file_patterns": [
+          "/*.sublime-project"
+        ],
+        "schema": {
+          "properties": {
+            "settings": {
+              "properties": {
+                "LSP": {
+                  "properties": {
+                    "harper-ls": {
+                      "$ref": "sublime://settings/LSP-harper-ls#/definitions/PluginConfig"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
