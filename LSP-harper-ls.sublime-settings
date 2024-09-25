@@ -1,4 +1,5 @@
 {
+    "enabled": true,
     "userDictPath": "${storage_path}/dict.txt",
     "fileDictPath": "${storage_path}/.harper/",
     "diagnosticSeverity": "hint", // Can also be "information", "warning", or "error"
