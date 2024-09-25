@@ -5,7 +5,6 @@ import zipfile
 
 import sublime
 
-# LSP
 from LSP.plugin import AbstractPlugin, register_plugin, unregister_plugin
 
 SESSION_NAME = "harper-ls"
@@ -17,6 +16,7 @@ SESSION_NAME = "harper-ls"
 TAG = "v0.11.0"
 # TODO fix to allow windows zip archive
 URL = "https://github.com/elijah-potter/harper/releases/download/{tag}/harper-ls-{arch}-{platform}.tar.gz"
+
 
 def arch() -> str:
     if sublime.arch() == "x64":
@@ -47,21 +47,22 @@ class HarperLS(AbstractPlugin):
     def basedir(cls) -> str:
         return os.path.join(cls.storage_path(), __package__)
 
-    @classmethod
-    def server_version(cls) -> str:
-        return TAG
+    # TODO handle versions
+    # @classmethod
+    # def server_version(cls) -> str:
+    #     return TAG
 
-    @classmethod
-    def current_server_version(cls) -> str:
-        with open(os.path.join(cls.basedir(), "VERSION"), "r") as fp:
-            return fp.read()
+    # @classmethod
+    # def current_server_version(cls) -> str:
+    #     with open(os.path.join(cls.basedir(), "VERSION"), "r") as fp:
+    #         return fp.read()
 
-    @classmethod
-    def needs_update_or_installation(cls) -> bool:
-        try:
-            return cls.server_version() != cls.current_server_version()
-        except OSError:
-            return True
+    # @classmethod
+    # def needs_update_or_installation(cls) -> bool:
+    #     try:
+    #         return cls.server_version() != cls.current_server_version()
+    #     except OSError:
+    #         return True
 
     @classmethod
     def install_or_update(cls) -> None:
@@ -70,7 +71,7 @@ class HarperLS(AbstractPlugin):
                 shutil.rmtree(cls.basedir())
             os.makedirs(cls.basedir(), exist_ok=True)
 
-            version = cls.server_version()
+            # version = cls.server_version()
             url = URL.format(tag=TAG, arch=arch(), platform=platform())
 
             zip_path, _ = urllib.request.urlretrieve(url)
@@ -85,8 +86,8 @@ class HarperLS(AbstractPlugin):
             os.remove(zip_path)
             os.chmod(serverfile, 0o744)
 
-            with open(os.path.join(cls.basedir(), "VERSION"), "w") as fp:
-                fp.write(version)
+            # with open(os.path.join(cls.basedir(), "VERSION"), "w") as fp:
+            #     fp.write(version)
 
         except BaseException:
             shutil.rmtree(cls.basedir(), ignore_errors=True)
