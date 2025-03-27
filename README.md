@@ -1,5 +1,7 @@
 # LSP-harper-ls
 
+**THIS SUBLIME PACKAGE IS NOT FUNCTIONAL. THESE ARE NOT THE DROIDS YOU'RE LOOKING FOR**
+
 LSP-harper-ls is a helper package that automatically installs and updates [`harper-ls`][1] for [Sublime Text][4].
 
 Read more about [Harper English grammar checker][5]. 
